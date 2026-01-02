@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
@@ -36,14 +37,23 @@ export function HeroSection() {
         </motion.p>
 
         {/* Title */}
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-wide text-[#1A1A1A] mb-6"
+          className="flex items-center justify-center gap-3 mb-6"
         >
-          <span className="text-[#D85A5A]">Vera</span>Bench
-        </motion.h1>
+          <Image
+            src="/vera.svg"
+            alt="Vera"
+            width={200}
+            height={65}
+            className="h-12 md:h-16 w-auto"
+          />
+          <span className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#D85A5A]">
+            Bench
+          </span>
+        </motion.div>
 
         {/* Subtitle */}
         <motion.p
