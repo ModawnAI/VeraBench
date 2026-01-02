@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+
+  /* Vera Brand Colors - Vera Crimson Only */
+  --color-vera-crimson: #D85A5A;
+  --color-vera-crimson-hover: #C04A4A;
+  --color-vera-crimson-light: rgba(216, 90, 90, 0.1);
+
+  /* Text Colors */
+  --color-text-primary: #1A1A1A;
+  --color-text-secondary: #666666;
+  --color-text-muted: #888888;
+  --color-text-hint: #999999;
+
+  /* Border Colors */
+  --color-border-light: #EEEEEE;
+  --color-border-medium: #DDDDDD;
+
+  /* Background Colors */
+  --color-bg-light: #FAFAFA;
+  --color-bg-input: #F5F5F5;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+  /* Radius */
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-noto-sans-kr), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --default-font-family: var(--font-mono);
+  --default-font-feature-settings: normal;
+  --default-font-variation-settings: normal;
+
+  /* Custom colors */
+  --color-vera-crimson: #D85A5A;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: inherit;
+}
+
+* {
+  font-family: inherit;
+}
+
+/* Glass Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Decorative line - Vera Crimson */
+.line-vera {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-vera-crimson), transparent);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* Focus visible styles */
+*:focus-visible {
+  outline: 2px solid var(--color-vera-crimson);
+  outline-offset: 2px;
+}

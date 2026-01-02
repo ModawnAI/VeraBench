@@ -1,0 +1,234 @@
+I am wanting to create a leaderboard for LLMs for the Medspa, skincare, aethetician specific domain.
+Research how LLM benchmark is done, how we should do it, and how to create evaluation tests for different LLMs.
+
+
+My company is Vera Beauty. https://verabeauty.app/
+
+(Team Vocabulary
+
+Consistent language to get everyone speaking the same language when talking about our company / products.
+
+
+
+Term
+Definition
+Synonyms
+Vera Beauty Inc.
+Legal name of our company.
+
+
+Vera
+Name of our main product.
+Vera app, Vera Beauty
+verakorea.co
+Our MVP web-app research-hub product that we started with, to address MAWTTs.
+
+
+Aesthetic Medicine
+A branch of modern medicine that focuses on altering natural or acquired unwanted appearance through the treatment of various conditions.
+Medical aesthetics
+
+
+
+
+
+
+Beauty Treatment
+Beauty treatments is the broad category that encompass all services and treatments aimed at enhancing physical appearance, grooming, and relaxation. They include both basic, non-medical services (e.g., facials, waxing) and more advanced procedures like cosmetic treatments.
+
+Examples: Basic facials, hair styling, manicures, makeup application, body scrubs, etc.
+
+
+Aesthetic Treatment
+Aesthetic treatments fall under the broader category of beauty treatments but are distinct in their focus on advanced, medical-grade procedures. They represent the professional, high-tech side of the beauty industry, compared to the everyday, non-medical services found in salons and spas.
+
+Vera focuses on aesthetic treatments, NOT the broader beauty treatments.
+
+Examples: Advanced facials, Botox, fillers, peels, laser skin resurfacing, liposuction, rhinoplasty.
+Treatment, service, cosmetic treatment
+
+
+MAWTTs
+Middle-Aged Women Traveling for Treatments.
+
+How we internally refer to our initial target audience of foreigners getting treatments in Korea.
+
+Willing to fly to Korea for value/tech/trust; $6k+ AOV when traveling; high-intent, research-heavy, clinic-skeptical.
+
+
+MAWFIAs
+Middle-Aged Women Fighting Inevitable Aging.
+
+How we internally refer to our broader target audience.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Patient
+Person who gets aesthetic treatments done.
+
+
+Provider
+Entity (person or facility) that delivers aesthetic treatments.
+Institution, clinic, medspa, hospital, doctor, nurse, aesthetician, etc…
+
+
+
+
+
+
+Specialty
+The “major” medical category. Types of specialties we focus on at Vera are:
+Aesthetic Medicine
+Cosmetic Surgery
+Intimate Rejuvenation
+Dentistry
+
+
+Concern
+Aesthetic concerns addressable by treatments. Such as wrinkles, hyperpigmentation, etc…
+
+
+Treatment
+Short for aesthetic treatment. This is the basic “commodity” (a.k.a. a standardized product) that Vera builds around.
+
+Scope of aesthetic treatments we focus on at Vera (the Vera Treatments List) are constrained by these heuristics:
+No DIY treatments
+Falls into one of the categories defined in Vera Taxonomy
+Operation, surgery, procedure, medication
+Invasiveness
+Types of invasiveness are:
+Surgical - Involves incisions, stitches, or major tissue alteration. Typically requires general/local anesthesia and significant downtime.
+Minimally Invasive - Involves minor punctures, injections, or small incisions. Often requires numbing or local anesthesia; downtime varies.
+Non-Invasive - No skin penetration. Uses surface-level methods (e.g., lasers, ultrasound, topical treatments); usually no anesthesia needed.
+
+
+
+
+
+
+
+
+Vera Taxonomy
+A comprehensive, flexible, and future-proof data system that is essential for establishing a solid foundation in everything we do for ourselves as well as for the industry. We source many aesthetic care systems and medical resources to develop a globally unifying system.
+Vera Ontology
+Vera Treatments List
+The official, pre-defined, and evolving list of curated treatments cataloged in the Vera Taxonomy.
+
+We maintain this list guided by our constraints/heuristics for the curation of treatments (defined in treatments).
+
+
+
+
+
+
+
+
+Vera Research
+Vera’s core product that allows users to explore treatments and providers.
+Research tab, research tool, infohub
+Vera Talk
+Vera’s in-app community to chat with other users or providers.
+Community tab, talk tab, group chats
+Vera Diary
+Vera’s utility tool to help users keep track of their treatments.
+Treatment log
+Vera Reception
+Vera’s appointment booking engine.
+Vera Booking
+AIA
+Short for AI Aesthetician, our gen-ai system and a cluster of agentic ai products within Vera, including:
+Facial Analysis
+Recommendation
+Research
+…(there may be more in the future)
+AI Aesthetician, Vera AI
+VFF
+Short for Vera Friends Forever.
+
+There’s nothing quite like the friendships made through Vera!
+
+This phrase is used for various purposes (such as conference name)
+Vera Friends Forever
+
+
+
+
+
+
+Review
+Content created by patients to discuss and/or rate an institution or a specialist.
+
+There are two types of reviews:
+
+
+Review w/ Rating
+A type of review that also contains a rating on a scale of 0-10.
+
+These are also usually short-form reviews.
+Short-form review
+Review w/o Rating
+A type of review that doesn’t contain a numerical rating.
+
+These are usually long-form reviews.
+Long-form review
+
+
+
+
+
+
+Appointment
+An event between patient and provider.
+
+Types of appointments are:
+Consultation (in-person)
+Treatment
+… (there may be more in the future, like online consultation)
+
+
+Appointment Request
+An appointment that requires confirmation from the provider.
+
+
+
+
+
+)
+
+Brand
+Brand Mission
+Raising the world’s skin game.
+Brand Promise
+Age beautifully.
+Brand Vision
+The most trusted platform for all things aesthetic treatments.
+Brand Values
+Honesty - radical transparency, delivered kindly
+Beauty - look better to feel better
+Science - evidence over hype
+Empathy - we build to connect, not to convince
+Inclusivity - access for all skin tones
+Brand Taglines
+“Age beautifully”
+“Age beautifully, backed by science”
+“The app for aesthetic treatments”
+“Raising the world’s skin game”
+“Unlock the secrets of skin treatments”
+“Aesthetic care, demystified”
+“Look your true self”
+Brand Voice
+Vera speaks with calm authority - of the passionate next-door Korean mom, the one who knows every skin secret, every new clinic, every treatment worth your trust.
+Our voice blends scientific clarity with emotional intuition, guiding users through aesthetic care with confidence, not perfectionism.
+It’s intelligent yet warm, minimalist yet magnetic, revealing beauty as something you understand rather than chase.
+Vera doesn’t tell you what to do; she shows you what’s possible.
