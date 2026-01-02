@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Twitter, Linkedin } from "lucide-react";
 
 const footerLinks = {
@@ -32,11 +33,15 @@ export function Footer() {
           <div className="grid md:grid-cols-4 gap-12">
             {/* Brand */}
             <div className="md:col-span-1">
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl tracking-[0.2em] font-medium text-[#1A1A1A]">
-                  VERA
-                </span>
-                <span className="text-xs tracking-[0.1em] text-[#D85A5A] font-medium uppercase">
+              <div className="flex items-center gap-1.5 mb-4">
+                <Image
+                  src="/vera.svg"
+                  alt="Vera"
+                  width={80}
+                  height={26}
+                  className="h-6 w-auto"
+                />
+                <span className="text-lg font-medium text-[#D85A5A]">
                   Bench
                 </span>
               </div>

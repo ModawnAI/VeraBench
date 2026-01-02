@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
@@ -37,11 +38,15 @@ export function Header() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl tracking-[0.2em] font-medium text-[#1A1A1A]">
-              VERA
-            </span>
-            <span className="text-xs tracking-[0.1em] text-[#D85A5A] font-medium uppercase">
+          <Link href="/" className="flex items-center gap-1.5">
+            <Image
+              src="/vera.svg"
+              alt="Vera"
+              width={80}
+              height={26}
+              className="h-6 w-auto"
+            />
+            <span className="text-lg font-medium text-[#D85A5A]">
               Bench
             </span>
           </Link>

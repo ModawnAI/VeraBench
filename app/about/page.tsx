@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -67,10 +68,14 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               className="flex items-center justify-center gap-2 mb-6"
             >
-              <span className="text-3xl tracking-[0.2em] font-medium text-[#1A1A1A]">
-                VERA
-              </span>
-              <span className="text-sm tracking-[0.1em] text-[#D85A5A] font-medium uppercase">
+              <Image
+                src="/vera.svg"
+                alt="Vera"
+                width={120}
+                height={39}
+                className="h-9 w-auto"
+              />
+              <span className="text-2xl font-medium text-[#D85A5A]">
                 Bench
               </span>
             </motion.div>
