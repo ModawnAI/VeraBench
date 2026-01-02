@@ -36,10 +36,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-noto-sans-kr), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-  --default-font-family: var(--font-mono);
-  --default-font-feature-settings: normal;
-  --default-font-variation-settings: normal;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* Custom colors */
   --color-vera-crimson: #D85A5A;
@@ -47,17 +44,16 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: var(--font-geist-mono), "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: inherit;
 }
 
-* {
-  font-family: inherit;
+/* Apply Geist Mono font globally */
+html, body, input, button, textarea, select {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 /* Glass Effects */
