@@ -71,8 +71,8 @@ export function LeaderboardTable() {
 
   return (
     <section id="leaderboard" className="py-24 md:py-32 bg-white">
-      <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12">
             <p className="text-[#D85A5A] tracking-[0.2em] text-xs uppercase mb-4">
@@ -122,37 +122,43 @@ export function LeaderboardTable() {
               <table className="w-full">
                 <thead className="bg-[#FAFAFA]">
                   <tr>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-[#666] uppercase tracking-wider w-16">
+                    <th className="px-4 py-4 text-left text-xs font-medium text-[#666] uppercase tracking-wider w-14">
                       Rank
                     </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-[#666] uppercase tracking-wider">
+                    <th className="px-4 py-4 text-left text-xs font-medium text-[#666] uppercase tracking-wider min-w-[180px]">
                       Model
                     </th>
-                    <th className="px-6 py-4 text-left text-xs font-medium text-[#666] uppercase tracking-wider">
+                    <th className="px-4 py-4 text-left text-xs font-medium text-[#666] uppercase tracking-wider">
                       <button
                         onClick={() => handleSort("overall")}
                         className="flex items-center gap-1 hover:text-[#D85A5A] transition-colors"
                       >
-                        Overall Score
+                        Score
                         <SortIcon field="overall" />
                       </button>
+                    </th>
+                    <th className="px-4 py-4 text-center text-xs font-medium text-[#666] uppercase tracking-wider hidden md:table-cell">
+                      Context
+                    </th>
+                    <th className="px-4 py-4 text-center text-xs font-medium text-[#666] uppercase tracking-wider hidden md:table-cell">
+                      <span className="block">Pricing</span>
+                      <span className="text-[10px] font-normal normal-case text-[#999]">per 1M tokens</span>
                     </th>
                     {benchmarkCategories.map((category) => (
                       <th
                         key={category.id}
-                        className="px-4 py-4 text-left text-xs font-medium text-[#666] uppercase tracking-wider hidden lg:table-cell"
+                        className="px-3 py-4 text-center text-xs font-medium text-[#666] uppercase tracking-wider hidden xl:table-cell"
                       >
                         <button
                           onClick={() => handleSort(category.id)}
-                          className="flex items-center gap-1 hover:text-[#D85A5A] transition-colors"
+                          className="flex items-center justify-center gap-1 hover:text-[#D85A5A] transition-colors"
                         >
                           {category.shortName}
                           <SortIcon field={category.id} />
                         </button>
                       </th>
                     ))}
-                    <th className="px-4 py-4 text-right text-xs font-medium text-[#666] uppercase tracking-wider w-20">
-                      Details
+                    <th className="px-3 py-4 text-right text-xs font-medium text-[#666] uppercase tracking-wider w-16">
                     </th>
                   </tr>
                 </thead>
@@ -186,6 +192,16 @@ interface LeaderboardRowProps {
 function LeaderboardRow({ entry, rank, index }: LeaderboardRowProps) {
   const { model, result } = entry;
 
+  const formatContext = (tokens: number) => {
+    if (tokens >= 1000000) return `${(tokens / 1000000).toFixed(0)}M`;
+    return `${(tokens / 1000).toFixed(0)}K`;
+  };
+
+  const formatPrice = (price: number) => {
+    if (price < 1) return `$${price.toFixed(2)}`;
+    return `$${price.toFixed(2)}`;
+  };
+
   return (
     <motion.tr
       layout
@@ -196,27 +212,27 @@ function LeaderboardRow({ entry, rank, index }: LeaderboardRowProps) {
       className="border-b border-[#EEE] hover:bg-[#FAFAFA] transition-colors"
     >
       {/* Rank */}
-      <td className="px-6 py-5">
+      <td className="px-4 py-4">
         <RankBadge rank={rank} size="md" />
       </td>
 
       {/* Model Info */}
-      <td className="px-6 py-5">
+      <td className="px-4 py-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-[#F5F5F5] flex items-center justify-center flex-shrink-0 border border-[#EEE]">
-            <ProviderLogo providerId={model.provider.id} size={24} />
+          <div className="w-9 h-9 rounded-lg bg-[#F5F5F5] flex items-center justify-center flex-shrink-0 border border-[#EEE]">
+            <ProviderLogo providerId={model.provider.id} size={20} />
           </div>
           <div>
-            <p className="font-medium text-[#1A1A1A]">{model.name}</p>
+            <p className="font-medium text-[#1A1A1A] text-sm">{model.name}</p>
             <p className="text-xs text-[#888]">{model.provider.name}</p>
           </div>
         </div>
       </td>
 
       {/* Overall Score */}
-      <td className="px-6 py-5">
-        <div className="flex items-center gap-3">
-          <span className="text-lg font-semibold text-[#1A1A1A] w-12">
+      <td className="px-4 py-4">
+        <div className="flex items-center gap-2">
+          <span className="text-base font-semibold text-[#1A1A1A] w-10">
             {result.overallScore.toFixed(1)}
           </span>
           <AnimatedProgress
@@ -225,8 +241,26 @@ function LeaderboardRow({ entry, rank, index }: LeaderboardRowProps) {
             size="sm"
             showLabel={false}
             delay={index * 0.1}
-            className="w-24"
+            className="w-16"
           />
+        </div>
+      </td>
+
+      {/* Context Length */}
+      <td className="px-4 py-4 hidden md:table-cell text-center">
+        <span className="text-sm text-[#666] font-medium">
+          {formatContext(model.contextWindow)}
+        </span>
+      </td>
+
+      {/* Pricing (Combined) */}
+      <td className="px-4 py-4 hidden md:table-cell text-center">
+        <div className="flex flex-col items-center gap-0.5">
+          <span className="text-xs text-[#888]">
+            <span className="text-[#666] font-medium">{formatPrice(model.inputCostPer1M)}</span>
+            {" / "}
+            <span className="text-[#666] font-medium">{formatPrice(model.outputCostPer1M)}</span>
+          </span>
         </div>
       </td>
 
@@ -238,7 +272,7 @@ function LeaderboardRow({ entry, rank, index }: LeaderboardRowProps) {
         return (
           <td
             key={category.id}
-            className="px-4 py-5 hidden lg:table-cell"
+            className="px-3 py-4 hidden xl:table-cell text-center"
           >
             <ScoreBadge score={categoryScore?.score || 0} size="sm" />
           </td>
@@ -246,9 +280,9 @@ function LeaderboardRow({ entry, rank, index }: LeaderboardRowProps) {
       })}
 
       {/* Details Link */}
-      <td className="px-4 py-5 text-right">
+      <td className="px-3 py-4 text-right">
         <Link href={`/models/${model.id}`}>
-          <Button variant="ghost" size="sm" className="group">
+          <Button variant="ghost" size="sm" className="group h-8 w-8 p-0">
             <ChevronRight
               size={16}
               className="group-hover:translate-x-0.5 transition-transform"

@@ -16,6 +16,8 @@ export interface LLMModel {
   version: string;
   releaseDate: string;
   contextWindow: number;
+  inputCostPer1M: number;  // Cost per 1M input tokens in USD
+  outputCostPer1M: number; // Cost per 1M output tokens in USD
   description: string;
   isActive: boolean;
 }

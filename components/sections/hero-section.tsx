@@ -8,7 +8,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 const stats = [
-  { value: 5, label: "Models Tested", suffix: "" },
+  { value: 10, label: "Models Tested", suffix: "" },
   { value: 500, label: "Test Cases", suffix: "+" },
   { value: 4, label: "Categories", suffix: "" },
 ];
